@@ -71,22 +71,27 @@
 
   <script id="data-template" type="text/html">
     <div class="ui raised segment">
-      <p class="ui blue ribbon label"><%= NOM_BASE %></p>
-		<a href="mailto:soes-webdata-contact@developpement-durable.gouv.fr"><i class="mail orange icon"></i> Signaler une anomalie</a>&nbsp;&nbsp;
-		<% if(URL_DATA) { %><a target="_blank" href="<%= URL_DATA %>"><i class="external square blue icon"></i> Accès aux données</a><% } %>
-          <div class="ui label <%= qualcolor(QUALITE) %>" data-tooltip="Complétude des informations" data-position="top center"><i class="dashboard icon"></i><%= QUALITE %>%</div>
-          <div class="ui basic label" data-tooltip="Échelle de qualité des données ouvertes de Tim Berners-Lee" data-position="top center"><% for (index=0;index<QUALITE_OPENDATA;++index) { %>★<% } %></div>
+      <p class="ui blue ribbon label"><%= APPLI_SOURCE %></p>
+		  <p><%= DOMAINE_FONCTIONNEL %></p>&nbsp;&nbsp;
+		<p><%= TITRE_JDD %><i class="external square blue icon"></i>%></p>      
+          
       <p><%= DESCRIPTIF_COURT %></p>
+      <br />
+        <div class="ui container">
+          <p><%= linkify(DESCRIPTIF_LONG) %></p><br />
+        </div>
+
       <div class="ui two column grid">
         <div class="column">
           <div class="ui segments">
             <div class="ui segment">
-              <p>Type de service : <%= TYPE_ENTITE %></p>
-              <p>Nom du service : <%= NOM_ENTITE %></p>
-              <p>Politique publique : <%= POLPUBLIQUE %></p>
-              <p>Origine de la donnée : <%= ORIGINE %></p>
-              <p><div class="ui horizontal labels">Mots-clefs :
-                  <% var mywords=MOTS_CLEFS.split(';') ; for (index=0;index<mywords.length;++index) { %>
+              <p>Environnement : <%= TYPE_ENV %></p>
+              <p>Fréquence de mise à jour : <%= PERIOD_MAJ %></p>
+              <p>Dernière mise à jour : <%= DATEMAJ %></p>
+              <p>Domaine métier : <%= DOMAINE_METIER %></p>
+              <p>Origine : <%= INFO_INGESTION %></p>
+              <p><div class="ui horizontal labels">Reutilisations :
+                  <% var mywords=CU.split(';') ; for (index=0;index<mywords.length;++index) { %>
                   <a class="ui label" href="#" onclick="javascript:document.getElementById('searchbox').focus();searchbox.value='<%= mywords[index] %>';FJS.filter();"><%= mywords[index] %></a>
                   <% } %>
                 </div></p>
@@ -98,25 +103,16 @@
             <div class="ui segment">
                 <% if(PROD_TEMPS) { %><p>Profondeur temporelle : <%= PROD_TEMPS %></p><% } %>
                 <% if(VOLUMETRIE) { %><p>Volumétrie estimée : <%= VOLUMETRIE %></p><% } %>
-                <% if(SENSIBILITE) { %><p>Confidentialité : <%= SENSIBILITE %></p><% } %>
-                <% if(CONFIDENTIALITE) { %><p>Confidentialité (détail) : <%= CONFIDENTIALITE %></p><% } %>
-                <% if(LICENCE) { %><p>Licence / conditions d'usage : <%= LICENCE %></p><% } else { %><p><i>Licence non précisée</i></p><% } %>
+                <% if(SENSIBILITE) { %><p>Nombre de lignes : <%= SENSIBILITE %></p><% } %>
+                <% if(CONFIDENTIALITE) { %><p>Jour de creation : <%= CONFIDENTIALITE %></p><% } %>
+                <% if(COUV_GEO) { %><p>Couverture géographique : <%= COUV_GEO %></p><% } %>
 
-                <p><div class="ui labels">
-                  <% var mywords=FORMATS.split(';') ; if (mywords.length > 1) { %>
-                  Formats : <% for (index=0;index<mywords.length;++index) { %>
-                  <a class="ui label" href="#" onclick="javascript:document.getElementById('searchbox').focus();searchbox.value='<%= mywords[index] %>';FJS.filter();"><%= mywords[index] %></a>
-                  <% }} else { %>
-                  <i>Format non précisé</i>
-                  <% } %></div></p>
-
-                <% if(COUV_GEO) { %><p>Couverture géo : <%= COUV_GEO %></p><% } %>
+              <p>Format Extraction : <%= FORMAT_EXTRACT %></p>
+              <p>Format de stockage : <%= FORMAT_STOCKAGE %></p>
             </div>
           </div>
         </div>
-        <div class="ui container">
-          <p><%= linkify(DESCRIPTIF_LONG) %></p><br />
-        </div>
+
       </div>
     </script>
 
