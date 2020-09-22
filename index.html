@@ -77,7 +77,7 @@
               <p>Domaine fonctionnel : <%= NOM_ENTITE %></p>
               <p>Domaine métier : <%= POLPUBLIQUE %></p>
               <p>Origine de la donnée : <%= ORIGINE %></p>
-              <p><div class="ui horizontal labels">Mots-clefs :
+              <p><div class="ui horizontal labels">Reutilisations :
                   <% var mywords=MOTS_CLEFS.split(';') ; for (index=0;index<mywords.length;++index) { %>
                   <a class="ui label" href="#" onclick="javascript:document.getElementById('searchbox').focus();searchbox.value='<%= mywords[index] %>';FJS.filter();"><%= mywords[index] %></a>
                   <% } %>
