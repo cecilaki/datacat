@@ -25,7 +25,7 @@
       <div class="two wide column"><img class="ui image" src="assets/img/logo_DGDDI.png" alt="Logo Douane"></div>
       <div class="ten wide column centered">
         <div class="titre">Catalogue de données - Plateforme Data Mining</div>
-        <div class="update">mise à jour : <span id="mydata_maxdatemaj">0</span></div>
+        <div class="update">Dernière mise à jour : <span id="mydata_maxdatemaj">0</span></div>
         <div class="label">Vous trouverez ci-dessous la liste des données présentes dans les 3 différents environnements de la plateforme Data Mining. Cette liste sera enrichie plus tard par un dictionnaire de variables relatif à chaque source.</div>
       </div>
     </div>
@@ -66,9 +66,9 @@
       <p class="ui blue ribbon label"><%= NOM_BASE %></p>
     <a href="#"><i class="mail orange icon"></i> Signaler une anomalie</a>&nbsp;&nbsp;
     <% if(URL_DATA) { %><a target="_blank" href="#"><i class="external square blue icon"></i>Voir le dictionnaire de données</a><% } %>
-          <div class="ui label <%= qualcolor(QUALITE) %>" data-tooltip="Complétude des informations" data-position="top center"><i class="dashboard icon"></i><%= QUALITE %>%</div>
-          <div class="ui basic label" data-tooltip="Échelle de qualité des données ouvertes de Tim Berners-Lee" data-position="top center"><% for (index=0;index<QUALITE_OPENDATA;++index) { %>★<% } %></div>
-      <p><%= DESCRIPTIF_COURT %></p>
+          <!-- <div class="ui label <%= qualcolor(QUALITE) %>" data-tooltip="Complétude des informations" data-position="top center"><i class="dashboard icon"></i><%= QUALITE %>%</div> -->
+          <!-- <div class="ui basic label" data-tooltip="Échelle de qualité des données ouvertes de Tim Berners-Lee" data-position="top center"><% for (index=0;index<QUALITE_OPENDATA;++index) { %>★<% } %></div> -->
+      <p style="font-weight: bold; padding-top: 15px;"><%= DESCRIPTIF_COURT %></p>
       <div class="ui two column grid">
         <div class="column">
           <div class="ui segments">
@@ -96,7 +96,7 @@
 
                 <p><div class="ui labels">
                   <% var mywords=FORMATS.split(';') ; if (mywords.length > 1) { %>
-                  Formats : <% for (index=0;index<mywords.length;++index) { %>
+                  Formats possibles extraction : <% for (index=0;index<mywords.length;++index) { %>
                   <a class="ui label" href="#" onclick="javascript:document.getElementById('searchbox').focus();searchbox.value='<%= mywords[index] %>';FJS.filter();"><%= mywords[index] %></a>
                   <% }} else { %>
                   <i>Format non précisé</i>
