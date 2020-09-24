@@ -11,6 +11,7 @@
     "ORIGINE": "Les données proviennent d'un batch quotidien de la zone de partage (ZP) du CID",
     "EXTENSION": "Plusieurs outils de modélisation sont adossés à la BI :\n- des outils d'AE\n- le Bilan Produit (éco-conception)",
     "COUV_GEO": "Monde",
+    "OBJET_METIER": "Procédure",
     "PROD_TEMPS": "4 années complètes - Du 01/01/2015 au 31/12/2018",
     "VOLUMETRIE": "46 364 368 lignes. Une ligne représentant ____ .",
     "SOCLE_TECH": "Documentation sectorielle disponible sur le site de la base",
