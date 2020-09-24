@@ -124,18 +124,34 @@
 <script id="template" type="x-tmpl-mustache">
 
   <div>
+    <fieldset id="nom_base_criteria">
+      <legend>Base</legend>
+            <input type="checkbox" name="nom_base" value ="All" id="nom_base_all"><span> Tout</span>
+      {{#NOM_BASE}}{{#.}}
+      <div id="couv_geo">
+        <div class="checkbox" fjs-criteria="field=NOM_BASE,ele=#nom_base_criteria input:checkbox">
+          <label>
+            &nbsp;&nbsp;<input type="checkbox" name="nom_base" value="{{.}}"> <span>{{.}}</span>
+          </label>
+        </div>
+      </div>
+      {{/.}}{{/NOM_BASE}}
+    </fieldset>
+  </div>
+  
+    <div>
     <fieldset id="polpublique_criteria">
       <legend>Domaine métier</legend>
             <input type="checkbox" name="polpublique" value ="All" id="polpublique_all"><span> Tout</span>
-      {{#NOM_BASE}}{{#.}}
+      {{#POLPUBLIQUE}}{{#.}}
       <div id="couv_geo">
-        <div class="checkbox" fjs-criteria="field=NOM_BASE,ele=#polpublique_criteria input:checkbox">
+        <div class="checkbox" fjs-criteria="field=POLPUBLIQUE,ele=#polpublique_criteria input:checkbox">
           <label>
             &nbsp;&nbsp;<input type="checkbox" name="polpublique" value="{{.}}"> <span>{{.}}</span>
           </label>
         </div>
       </div>
-      {{/.}}{{/NOM_BASE}}
+      {{/.}}{{/POLPUBLIQUE}}
     </fieldset>
   </div>
 
