@@ -65,7 +65,7 @@
     <div class="ui raised segment">
       <p class="ui blue ribbon label"><%= NOM_BASE %></p>
     <a href="#"><i class="mail orange icon"></i> Signaler une anomalie</a>&nbsp;&nbsp;
-    <% if(URL_DATA) { %><a target="_blank" href="#"><i class="external square blue icon"></i>Voir le dictionnaire de données</a><% } %>
+    <% if(URL_DATA) { %><a target="_blank" href="<%= URL_DATA %>"><i class="external square blue icon"></i>Voir le dictionnaire de données</a><% } %>
           <!-- <div class="ui label <%= qualcolor(QUALITE) %>" data-tooltip="Complétude des informations" data-position="top center"><i class="dashboard icon"></i><%= QUALITE %>%</div> -->
           <!-- <div class="ui basic label" data-tooltip="Échelle de qualité des données ouvertes de Tim Berners-Lee" data-position="top center"><% for (index=0;index<QUALITE_OPENDATA;++index) { %>★<% } %></div> -->
       <p style="font-weight: bold; padding-top: 15px;"><%= DESCRIPTIF_COURT %></p>
