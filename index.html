@@ -127,15 +127,15 @@
     <fieldset id="polpublique_criteria">
       <legend>Domaine métier</legend>
             <input type="checkbox" name="polpublique" value ="All" id="polpublique_all"><span> Tout</span>
-      {{#POLPUBLIQUE}}{{#.}}
+      {{#NOM_BASE}}{{#.}}
       <div id="couv_geo">
-        <div class="checkbox" fjs-criteria="field=POLPUBLIQUE,ele=#polpublique_criteria input:checkbox">
+        <div class="checkbox" fjs-criteria="field=NOM_BASE,ele=#polpublique_criteria input:checkbox">
           <label>
             &nbsp;&nbsp;<input type="checkbox" name="polpublique" value="{{.}}"> <span>{{.}}</span>
           </label>
         </div>
       </div>
-      {{/.}}{{/POLPUBLIQUE}}
+      {{/.}}{{/NOM_BASE}}
     </fieldset>
   </div>
 
