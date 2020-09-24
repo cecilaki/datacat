@@ -19,6 +19,7 @@ $(document).ready(function() {
   var datemax = new Date(Math.max.apply(this, arr));
   $('#mydata_maxdatemaj').text(formattedDate(datemax));
   var filteringData = {
+    'NOM_BASE': [],
     'TYPE_ENTITE': [],
     'COUV_GEO': [],
     'POLPUBLIQUE': [],
@@ -47,6 +48,7 @@ $(document).ready(function() {
   FJS.addCallback('afterFilter', function(result) {
     $('#mydata_count').text(result.length);
   });
+  FJS.addCriteria({ field: 'NOM_BASE',     ele: '#nom_base_criteria  input:checkbox' });
   FJS.addCriteria({ field: 'TYPE_ENTITE',  ele: '#type_entite_criteria  input:checkbox' });
   FJS.addCriteria({ field: 'LICENCE',      ele: '#licence_criteria      input:checkbox' });
   FJS.addCriteria({ field: 'COUV_GEO',     ele: '#couv_geo_criteria     input:checkbox' });
@@ -57,6 +59,10 @@ $(document).ready(function() {
 });
 
 function initSliders() {
+  $('#nom_base_criteria :checkbox').prop('checked', true);
+  $('#nom_base_all').on('click', function(){
+    $('#nom_base_criteria :checkbox').prop('checked', $(this).is(':checked'));
+  });
   $('#polpublique_criteria :checkbox').prop('checked', true);
   $('#polpublique_all').on('click', function(){
     $('#polpublique_criteria :checkbox').prop('checked', $(this).is(':checked'));
